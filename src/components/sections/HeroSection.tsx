@@ -1,5 +1,9 @@
 import React from "react";
+import Section from "../common/Section";
 import Button from "../ui/Button";
+import Image from "next/image";
+import heroImage from "../../assets/images/heroImage.svg";
+import Slider from "../common/Slider";
 
 interface Prop {
   header?: string;
@@ -11,13 +15,36 @@ const HeroSection = ({
   desc = "Strony internetowe tworzę w pojedynkę, robię to z pasją. Zaczynając od prototypu, po design, aż do implementacji.Współpracując ze mną napewno znajdziemy rozwiązanie, którę Cię zadowoli i nada Twojej marce duszę.",
 }: Prop) => {
   return (
-    <div className="flex justify-between items-center p-4 h-[60vh]">
-      <div className="w-1/2 space-y-4">
-        <h1>{header}</h1>
-        <p>{desc}</p>
+    <>
+    <Section>
+      <div className="flex justify-between items-center space-x-6 h-[70vh]">
+        <div className="w-1/2 space-y-4">
+          <h1>{header}</h1>
+          <p>{desc}</p>
+          <div className="flex space-x-2">
+            <Button>Kontakt</Button>
+            <Button variant="secondary">Oferta</Button>
+          </div>
+        </div>
+        <div className="flex justify-end items-center w-1/2">
+          <Image
+            src={heroImage}
+            alt="Ilustracja sprzętu komputerowego i developera"
+          />
+        </div>
       </div>
-      <div className="flex justify-center items-center w-1/2">IMAGE</div>
-    </div>
+      </Section>
+      <Slider>
+        <span>CREATIVE</span>
+        <span>•</span>
+        <span>RESPONSIVE</span>
+        <span>•</span>
+        <span>SCALABLE</span>
+        <span>•</span>
+        <span>SEO READY</span>
+        <span>•</span>
+      </Slider>
+    </>
   );
 };
 

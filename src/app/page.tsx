@@ -1,15 +1,23 @@
 import Image from "next/image";
 import NavBar from "@/components/layout/NavBar";
 import HeroSection from "@/components/sections/HeroSection";
-import Slider from "@/components/common/Slider";
+import ServicesSection from "@/components/sections/ServicesSection";
+import WorkProcessSection from "@/components/sections/WorkProcessSection";
+import PlaceHolderSection from "@/components/sections/PlaceHolderSection";
+import FAQSection from "@/components/sections/FAQSection";
+import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
-    <div className="container mx-auto px-8 md:px-20 lg:px-24">
+    <>
       <NavBar />
       <main>
         <HeroSection />
-        <Slider>TEXT</Slider>
+        <ServicesSection />
+        <WorkProcessSection />
+        <PlaceHolderSection />
+        <FAQSection />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
