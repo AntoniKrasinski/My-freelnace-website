@@ -45,33 +45,38 @@ body {
   font-family: var(--font-rubik-mono-one);
 }
 h1 {
-  font-size: 58px;
+  font-size: 54px;
   font-weight: 600;
 }
+
 h2 {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 500;
 }
 
 h3 {
-  font-size: 36px;
-  font-weight: 500;
-}
-h4 {
   font-size: 30px;
   font-weight: 500;
 }
+
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
 p {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
 }
+
 li {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 500;
 }
+
 button {
+  font-size: 24px;
   font-weight: 500;
-  font-size: 28px;
 }
 button:hover {
   cursor: pointer;

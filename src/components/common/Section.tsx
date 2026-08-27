@@ -1,21 +1,22 @@
-import { ReactNode } from "react";
-
-interface Props {
-  children: ReactNode;
+import React from "react";
+import Container from "./Container";
+import SectionHeader from "./SectionHeader";
+interface Prop {
+  children: React.ReactNode;
+  title: string;
+  desc: string;
   background?: "background" | "surface";
-  className?: string;
 }
-
-export default function Section({
-  children,
-  background = "background",
-  className,
-}: Props) {
+const Sections = ({ children, title, desc, background }: Prop) => {
   return (
-    <section className={`bg-${background}`}>
-      <div className={`container mx-auto px-8 md:px-20 lg:px-28 p-4 ${className}`}>
-        {children}
-      </div>
-    </section>
+    <Container background={background} className="py-8">
+      <SectionHeader
+        title={title}
+        desc={desc}
+        color={`${background === "surface" ? "background" : "surface"}`}
+      ></SectionHeader>
+      {children}
+    </Container>
   );
-}
+};
+export default Sections;

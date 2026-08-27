@@ -2,49 +2,44 @@ import React from "react";
 import Section from "../common/Section";
 import SectionHeader from "../common/SectionHeader";
 import VerticalSpecialText from "../common/VerticalSpecialText";
-const workProcess: { id: number; title: string; desc: string }[] = [
+const workProcess: { title: string; desc: string }[] = [
   {
-    id: 0,
     title: "Ustalenie Potrzeb",
-    desc: "fdgdgfhugfdh fdguguhfd hdugf hu fgdhu fdghuhuf dghgfd hugfd uhh gfdhgf dhiugf",
+    desc: "Rozmowa z klientem, na tym etapie poznaje problem biznesowy, który moja usługa ma rozwiązać. Na podstawie informacji, które uzyskałem proponuje rozwiązanie. Na tym etapie również proszę klienta o preferencje wizualne strony. ",
   },
   {
-    id: 1,
-    title: "Ustalenie Potrzeb",
-    desc: "fdgdgfhugfdh fdguguhfd hdugf hu fgdhu fdghuhuf dghgfd hugfd uhh gfdhgf dhiugf",
+    title: "Design",
+    desc: "Tworzę wstępny projekt strony, który przesyłam klientowi do akceptacji. Gdy klient zatwierdzi projekt przechodzę do następnego etapu, w innym przypadku poprawiam projekt według preferencji klienta.",
   },
   {
-    id: 2,
-    title: "Ustalenie Potrzeb",
-    desc: "fdgdgfhugfdh fdguguhfd hdugf hu fgdhu fdghuhuf dghgfd hugfd uhh gfdhgf dhiugf",
+    title: "Kodowanie i Testowanie",
+    desc: "Tworzę stronę internetową w WoordPress lub Next.js a następnie ją dokładnie testuje pod względami takimi jak responsywność, szybkość ładowania oraz kilku innych aspektów.",
   },
   {
-    id: 3,
-    title: "Ustalenie Potrzeb",
-    desc: "fdgdgfhugfdh fdguguhfd hdugf hu fgdhu fdghuhuf dghgfd hugfd uhh gfdhgf dhiugf",
+    title: "Wdrożenie",
+    desc: "Gdy klient finalnie zatwiedzi projekt wysyłam kod na hosting, aby był on dostępny w internecie. ",
   },
   {
-    id: 4,
-    title: "Ustalenie Potrzeb",
-    desc: "fdgdgfhugfdh fdguguhfd hdugf hu fgdhu fdghuhuf dghgfd hugfd uhh gfdhgf dhiugf",
+    title: "Utrzymanie",
+    desc: "Jeśli klient zauważy jakiś błąd na stronie jestem zobowiązany go rozwiązać.",
   },
 ];
 
 const WorkProcessSection = () => {
   return (
-    <Section background="surface">
+    <Section background="surface"           title="Relizacja"
+          desc="Do każdego zlecenia podchodzę z planem, zależy mi na tym, aby  każda strona którą wykonuję, była spójna i łatwa w rozwoju oraz utrzymaniu.">
       <div>
-        <SectionHeader color="background" title="Relizacja" desc="123"/>
-        <div className="flex justify-between w-full">
+        <div className="flex w-full justify-between">
           <div className="w-3/4">
-            <div className="border border-border rounded-br-md rounded-tl-md">
-              {workProcess.map((e) => (
+            <div className="border-border rounded-tl-md rounded-br-md border">
+              {workProcess.map((e, index) => (
                 <div
-                  key={e.id}
-                  className={`${e.id % 2 === 0 ? "bg-primary" : "bg-background"} flex justify-around`}
+                  key={index}
+                  className={`${index % 2 === 0 ? "bg-primary" : "bg-background"} flex items-center`}
                 >
-                  <div className="specialText  p-2">
-                    <span>{e.id + 1}</span>
+                  <div className="specialText p-2 px-6">
+                    <span>{index + 1}</span>
                   </div>
                   <div>
                     <h3>{e.title}</h3>

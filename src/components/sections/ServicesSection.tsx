@@ -1,7 +1,6 @@
 import React from "react";
 import ServiceCard from "../ui/ServiceCard";
 import Section from "../common/Section";
-import SectionHeader from "../common/SectionHeader";
 import {
   landingPage,
   onlineShop,
@@ -11,11 +10,13 @@ import {
 
 const ServicesSection = () => {
   return (
-    <Section>
-      <div className="flex flex-col ">
-        <SectionHeader color="surface" title="Usługi" desc="123"/>
+    <Section
+      title="Usługi"
+      desc="Zakres moich usług zaczyna się od samego projektu, przez Landing Page, czyli stronę jednostronicową, aż po rozbudowane sklepy internetowe."
+    >
+      <div className="flex flex-col">
         <div className="flex justify-center">
-          <div className="my-8 grid grid-cols-2 grid-rows-2 w-fit gap-12">
+          <div className="my-8 grid w-fit grid-cols-2 grid-rows-2 gap-12">
             <ServiceCard
               variant="primary"
               text="Landing Page"

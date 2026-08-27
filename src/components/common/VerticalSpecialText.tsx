@@ -2,7 +2,7 @@ import React from "react";
 
 const VerticalSpecialText = ({ text }: { text: string }) => {
   return (
-    <div className="flex flex-col specialText leading-none">
+    <div className="specialText flex flex-col leading-none">
       {text
         .toUpperCase()
         .split("")
