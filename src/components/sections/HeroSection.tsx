@@ -17,8 +17,8 @@ const HeroSection = ({
   return (
     <>
       <Container>
-        <div className="flex items-center justify-between space-x-6">
-          <div className="w-1/2 space-y-4">
+        <div className="flex flex-col items-center md:flex-row md:justify-between md:space-x-6">
+          <div className="space-y-4 md:w-1/2">
             <h1>{header}</h1>
             <p>{desc}</p>
             <div className="flex space-x-2">
@@ -26,10 +26,11 @@ const HeroSection = ({
               <Button variant="secondary">Oferta</Button>
             </div>
           </div>
-          <div className="flex w-1/2 items-center justify-end">
+          <div className="mt-10 flex w-full justify-center md:mt-0 md:w-1/2 md:justify-end">
             <Image
               src={heroImage}
               alt="Ilustracja sprzętu komputerowego i developera"
+              className="w-full max-w-[320px] md:max-w-none"
             />
           </div>
         </div>

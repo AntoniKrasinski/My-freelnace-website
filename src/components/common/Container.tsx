@@ -13,7 +13,7 @@ export default function Section({
 }: Props) {
   return (
     <section className={`bg-${background} ${className}`}>
-      <div className={`container mx-auto p-4 px-8 md:px-20 lg:px-46`}>
+      <div className={`container mx-auto p-4 px-6 md:px-12 lg:px-20`}>
         {children}
       </div>
     </section>

@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../common/Section";
-import SectionHeader from "../common/SectionHeader";
 import VerticalSpecialText from "../common/VerticalSpecialText";
 const workProcess: { title: string; desc: string }[] = [
   {
@@ -27,12 +26,15 @@ const workProcess: { title: string; desc: string }[] = [
 
 const WorkProcessSection = () => {
   return (
-    <Section background="surface"           title="Relizacja"
-          desc="Do każdego zlecenia podchodzę z planem, zależy mi na tym, aby  każda strona którą wykonuję, była spójna i łatwa w rozwoju oraz utrzymaniu.">
+    <Section
+      background="surface"
+      title="Relizacja"
+      desc="Do każdego zlecenia podchodzę z planem, zależy mi na tym, aby  każda strona którą wykonuję, była spójna i łatwa w rozwoju oraz utrzymaniu."
+    >
       <div>
         <div className="flex w-full justify-between">
-          <div className="w-3/4">
-            <div className="border-border rounded-tl-md rounded-br-md border">
+          <div className="md:w-3/4">
+            <div className="border-border overflow-hidden rounded-tl-xl rounded-br-xl border">
               {workProcess.map((e, index) => (
                 <div
                   key={index}
@@ -41,7 +43,7 @@ const WorkProcessSection = () => {
                   <div className="specialText p-2 px-6">
                     <span>{index + 1}</span>
                   </div>
-                  <div>
+                  <div className="p-4">
                     <h3>{e.title}</h3>
                     <p>{e.desc}</p>
                   </div>
@@ -49,7 +51,7 @@ const WorkProcessSection = () => {
               ))}
             </div>
           </div>
-          <div className="">
+          <div className="hidden md:block">
             <VerticalSpecialText text="realizacja" />
           </div>
         </div>
