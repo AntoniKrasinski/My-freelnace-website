@@ -63,7 +63,7 @@ const WorkProcessSection = () => {
               <div key={index}>
                 <div
                   onClick={() => toogleQuestion(index)}
-                  className="border-border bg-primary border border-b-2 border-l-2 p-2 hover:cursor-pointer"
+                  className="bg-primary theme-border p-2 hover:cursor-pointer"
                 >
                   <div className="mx-4 flex items-center justify-between">
                     <h3 className="">{e.question}</h3>
@@ -73,7 +73,7 @@ const WorkProcessSection = () => {
                   </div>
                 </div>
                 <div
-                  className={`${dropAnwser === index ? "block" : "hidden"} border-border bg-background border border-t-0 border-b-2 border-l-2`}
+                  className={`${dropAnwser === index ? "block" : "hidden"} bg-background theme-border`}
                 >
                   {" "}
                   {/*add framer motion animation*/}

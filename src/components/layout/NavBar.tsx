@@ -5,7 +5,6 @@ import logo from "../../assets/images/antonikrasinski.plLogo.svg";
 import Button from "../ui/Button";
 import { MdMenu } from "react-icons/md";
 import Link from "next/link";
-// Responsive
 
 const NavBar = () => {
   return (
@@ -19,7 +18,10 @@ const NavBar = () => {
         <div className="flex flex-row items-center lg:hidden">
           <MdMenu size={60} />
         </div>
-        <div className="hidden flex-row items-center space-x-20 lg:flex">
+        <nav
+          aria-label="Główna nawigacja"
+          className="hidden flex-row items-center space-x-20 lg:flex"
+        >
           <ul className="flex flex-row space-x-10">
             <li>
               <Link href={""}>Usługi</Link>
@@ -35,9 +37,42 @@ const NavBar = () => {
             </li>
           </ul>
           <Button>Wycena</Button>
-        </div>
+        </nav>
       </header>
     </Section>
+  );
+};
+
+//ToDo
+const desktopNav = () => {
+  return (
+    <nav
+      aria-label="Główna nawigacja"
+      className="hidden flex-row items-center space-x-20 lg:flex"
+    >
+      <ul className="flex flex-row space-x-10">
+        <li>
+          <Link href={""}>Usługi</Link>
+        </li>
+        <li>
+          <Link href={""}>O mnie</Link>
+        </li>
+        <li>
+          <Link href={""}>Blog</Link>
+        </li>
+        <li>
+          <Link href={"/contact"}>Kontakt</Link>
+        </li>
+      </ul>
+      <Button>Wycena</Button>
+    </nav>
+  );
+};
+const mobileNav = () => {
+  return (
+    <div className="flex flex-row items-center lg:hidden">
+      <MdMenu size={60} />
+    </div>
   );
 };
 

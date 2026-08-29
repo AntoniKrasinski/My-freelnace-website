@@ -4,6 +4,7 @@ import Link from "next/link";
 interface Props {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "bgColor";
+  type?: "submit" | "button"
 }
 
 const variants = {
@@ -12,8 +13,12 @@ const variants = {
   bgColor: "bg-background text-black",
 };
 
-const Button = ({ children, variant = "primary" }: Props) => {
-  return <button className={`${variants[variant]} py-1 px-8 border-black border-t border-r border-b-2 border-l-2 rounded-sm `}>{children}</button>;
+const Button = ({ children, variant = "primary", type = "button" }: Props) => {
+  return (
+    <button type={type} className={`${variants[variant]} theme-border px-8 py-1`}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

@@ -78,6 +78,13 @@ button {
   font-size: 24px;
   font-weight: 500;
 }
+label{
+    font-weight: 500;
+}
+input,
+textarea {
+  border: #000000 1px solid;
+}
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
@@ -114,6 +121,18 @@ button {
     font-weight: 500;
   }
 }
+
 button:hover {
   cursor: pointer;
+}
+.theme-border {
+  border: var(--border) solid 1px;
+  border-left: var(--border) solid 2px;
+  border-bottom: var(--border) solid 2px;
+  border-radius: 4px;
+}
+.theme-border-rounded {
+  border: var(--border) solid 1px;
+  border-bottom: var(--border) solid 2px;
+  border-radius: 6px;
 }

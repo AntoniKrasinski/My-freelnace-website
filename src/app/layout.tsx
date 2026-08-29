@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/layout/NavBar";
+import Footer from "@/components/layout/Footer";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -29,7 +31,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pl"
       className={`${roboto.variable} ${robotoMono.variable} ${specialFont.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <NavBar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

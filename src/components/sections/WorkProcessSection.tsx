@@ -34,7 +34,7 @@ const WorkProcessSection = () => {
       <div>
         <div className="flex w-full justify-between">
           <div className="md:w-3/4">
-            <div className="border-border overflow-hidden rounded-tl-xl rounded-br-xl border">
+            <div className="border-border border-l-2 border-b-2 overflow-hidden rounded-tl-xl rounded-br-xl border">
               {workProcess.map((e, index) => (
                 <div
                   key={index}

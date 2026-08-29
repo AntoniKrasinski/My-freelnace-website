@@ -5,18 +5,20 @@ interface Prop {
   children: React.ReactNode;
   title: string;
   desc: string;
+  h1?: boolean;
   background?: "background" | "surface";
 }
-const Sections = ({ children, title, desc, background }: Prop) => {
+const Section = ({ children, title, desc, h1 = false, background }: Prop) => {
   return (
     <Container background={background} className="py-8">
       <SectionHeader
         title={title}
         desc={desc}
         color={`${background === "surface" ? "background" : "surface"}`}
+        h1={h1}
       ></SectionHeader>
       {children}
     </Container>
   );
 };
-export default Sections;
+export default Section;
