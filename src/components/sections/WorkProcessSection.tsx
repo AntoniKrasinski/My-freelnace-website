@@ -33,8 +33,8 @@ const WorkProcessSection = () => {
     >
       <div>
         <div className="flex w-full justify-between">
-          <div className="md:w-3/4">
-            <div className="border-border border-l-2 border-b-2 overflow-hidden rounded-tl-xl rounded-br-xl border">
+          <div className="xl:w-3/4">
+            <div className="border-border overflow-hidden rounded-tl-xl rounded-br-xl border border-b-2 border-l-2">
               {workProcess.map((e, index) => (
                 <div
                   key={index}
@@ -51,7 +51,7 @@ const WorkProcessSection = () => {
               ))}
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden xl:flex">
             <VerticalSpecialText text="realizacja" />
           </div>
         </div>

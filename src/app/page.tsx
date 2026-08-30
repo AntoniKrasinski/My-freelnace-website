@@ -3,6 +3,8 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import WorkProcessSection from "@/components/sections/WorkProcessSection";
 import PlaceHolderSection from "@/components/sections/ProjectsSection";
 import FAQSection from "@/components/sections/FAQSection";
+import ContactSection from "@/components/sections/ContactSection";
+
 export default function Home() {
   return (
     <>
@@ -11,6 +13,7 @@ export default function Home() {
       <WorkProcessSection />
       <PlaceHolderSection />
       <FAQSection />
+      <ContactSection />
     </>
   );
 }

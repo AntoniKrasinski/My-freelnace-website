@@ -77,9 +77,16 @@ const ContactForm = () => {
           }}
           required
         ></textarea>
+        <div className="flex items-start justify-start p-2">
+          <label htmlFor=""></label>
+          <input type="checkbox" className="m-1" />
+          <p className="smallText">
+            * Wyrażam zgodę na przetwarzanie podanych danych osobowych w celu
+            kontaktu i przesłania oczekiwanych przeze mnie treści.
+          </p>
+        </div>
         <div className="flex items-center">
           <Button type="submit">Wyślij</Button>
-          <div>r</div>
         </div>
       </form>
     </div>

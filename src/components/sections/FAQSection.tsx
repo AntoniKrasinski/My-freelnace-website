@@ -57,7 +57,7 @@ const WorkProcessSection = () => {
       desc="FAQ - Frequently Asked Questions, czyli najczęściej zadawane pytania."
     >
       <div className="flex w-full flex-row-reverse justify-between">
-        <div className="md:w-3/4">
+        <div className="xl:w-3/4">
           <div className="space-y-4">
             {questionsAnswers.map((e, index) => (
               <div key={index}>
@@ -83,7 +83,7 @@ const WorkProcessSection = () => {
             ))}
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <VerticalSpecialText text="pytania" />
         </div>
       </div>

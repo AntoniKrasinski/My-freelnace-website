@@ -1,21 +1,23 @@
 import React from "react";
-import Link from "next/link";
 
 interface Props {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "bgColor";
-  type?: "submit" | "button"
+  variant?: "primary" | "secondary" | "background";
+  type?: "submit" | "button";
 }
 
 const variants = {
-  primary: "bg-primary text-white",
-  secondary: "bg-surface text-black",
-  bgColor: "bg-background text-black",
+  primary: "bg-primary ",
+  secondary: "bg-surface",
+  background: "bg-background",
 };
 
 const Button = ({ children, variant = "primary", type = "button" }: Props) => {
   return (
-    <button type={type} className={`${variants[variant]} theme-border px-8 py-1`}>
+    <button
+      type={type}
+      className={`${variants[variant]} theme-border flex items-center justify-center px-8 py-1`}
+    >
       {children}
     </button>
   );

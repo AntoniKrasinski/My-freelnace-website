@@ -10,6 +10,7 @@
 html,
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @theme inline {
@@ -40,11 +41,19 @@ body {
   border: solid 2px black;
 }
 /* basic styles */
+nav {
+  font-size: 20px;
+  font-weight: 500;
+}
 .specialText {
   font-size: 80px;
   font-family: var(--font-rubik-mono-one);
 }
 h1 {
+  font-size: 54px;
+  font-weight: 600;
+}
+.h1 {
   font-size: 54px;
   font-weight: 600;
 }
@@ -68,18 +77,17 @@ p {
   font-size: 16px;
   font-weight: 500;
 }
-
-li {
-  font-size: 18px;
-  font-weight: 500;
+.smallText {
+  font-size: 14;
+  font-weight: normal;
 }
 
 button {
   font-size: 24px;
   font-weight: 500;
 }
-label{
-    font-weight: 500;
+label {
+  font-weight: 500;
 }
 input,
 textarea {
@@ -89,6 +97,10 @@ textarea {
   h1 {
     font-size: 32px;
     font-weight: 600;
+  }
+  .h1 {
+    font-size: 32px;
+    font-weight: 500;
   }
 
   h2 {
@@ -135,4 +147,8 @@ button:hover {
   border: var(--border) solid 1px;
   border-bottom: var(--border) solid 2px;
   border-radius: 6px;
+}
+
+#hero{
+  background-image: url("../assets/images/backgroundImages/test.svg");
 }

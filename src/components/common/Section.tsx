@@ -5,12 +5,20 @@ interface Prop {
   children: React.ReactNode;
   title: string;
   desc: string;
+  id?: string;
   h1?: boolean;
   background?: "background" | "surface";
 }
-const Section = ({ children, title, desc, h1 = false, background }: Prop) => {
+const Section = ({
+  children,
+  title,
+  desc,
+  id,
+  h1 = false,
+  background,
+}: Prop) => {
   return (
-    <Container background={background} className="py-8">
+    <Container id={id} background={background} className="py-8">
       <SectionHeader
         title={title}
         desc={desc}

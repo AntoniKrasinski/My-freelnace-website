@@ -1,20 +1,21 @@
 import React from "react";
 import Image from "next/image";
-import Section from "../common/Container";
-import logo from "../../assets/images/antonikrasinski.plLogo.svg";
+import Container from "../common/Container";
+import logo from "../../assets/images/logo.svg";
 import { MdEmail as Email } from "react-icons/md";
 import { FaPhoneAlt as Phone } from "react-icons/fa";
 import { FaLinkedin as LinkedIn } from "react-icons/fa";
 import { FaGithub as GitHub } from "react-icons/fa";
 import Link from "next/link";
+import InfoSection from "../sections/InfoSection";
 
 const Footer = () => {
   return (
     <footer>
-      <Section>
+      <Container>
         <div className="grid gap-6 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
           <div>
-            <Image src={logo} alt="logo" height={60} />
+            <Image src={logo} alt="logo" height={70} />
             <p className="">
               Antoni Krasiński
               <br />
@@ -26,27 +27,12 @@ const Footer = () => {
             <ul>
               <li>
                 <Link href="">
-                  <p>Strona Główna</p>
+                  <p>Polityka Prywatoności</p>
                 </Link>
               </li>
               <li>
                 <Link href="">
-                  <p>Usługi</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <p>O Mnie</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <p>Blog</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <p>Kontakt</p>
+                  <p>RODO</p>
                 </Link>
               </li>
             </ul>
@@ -76,7 +62,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </Section>
+      </Container>
+      <InfoSection />
     </footer>
   );
 };
