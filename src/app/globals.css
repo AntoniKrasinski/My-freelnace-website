@@ -75,7 +75,7 @@ h4 {
 
 p {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 460;
 }
 .smallText {
   font-size: 14;
@@ -91,7 +91,10 @@ label {
 }
 input,
 textarea {
-  border: #000000 1px solid;
+  border: var(--border) solid 1px;
+  border-left: var(--border) solid 2px;
+  border-bottom: var(--border) solid 2px;
+  border-radius: 4px;
 }
 @media (max-width: 768px) {
   h1 {
@@ -120,7 +123,7 @@ textarea {
 
   p {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 460;
   }
 
   li {
@@ -149,6 +152,6 @@ button:hover {
   border-radius: 6px;
 }
 
-#hero{
+#hero {
   background-image: url("../assets/images/backgroundImages/test.svg");
 }
