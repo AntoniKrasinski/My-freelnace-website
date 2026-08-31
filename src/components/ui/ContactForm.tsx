@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Button from "./Button";
 interface Data {
   name: string;
   phone?: string;
@@ -78,15 +77,21 @@ const ContactForm = () => {
           required
         ></textarea>
         <div className="flex items-start justify-start p-2">
-          <label htmlFor=""></label>
-          <input type="checkbox" className="m-1" />
-          <p className="smallText">
+          <input
+            required
+            id="rodo"
+            type="checkbox"
+            className="m-1 hover:cursor-pointer"
+          />
+          <label htmlFor="rodo" className="smallText hover:cursor-pointer">
             * Wyrażam zgodę na przetwarzanie podanych danych osobowych w celu
             kontaktu i przesłania oczekiwanych przeze mnie treści.
-          </p>
+          </label>
         </div>
         <div className="flex items-center">
-          <Button type="submit">Wyślij</Button>
+          <button className="button" type="submit">
+            Wyślij
+          </button>
         </div>
       </form>
     </div>

@@ -9,6 +9,7 @@ const PlaceHolderSection = () => {
     <Section
       title="Projekty"
       desc="Sprawdź moje wybrane projekty. Zaufaj doświadczonej osobie."
+      id="projekty"
     >
       <article className="flex flex-col-reverse gap-14 xl:flex-row">
         <div className="space-y-4 xl:w-1/2">

@@ -7,7 +7,6 @@ import { FaPhoneAlt as Phone } from "react-icons/fa";
 import { FaLinkedin as LinkedIn } from "react-icons/fa";
 import { FaGithub as GitHub } from "react-icons/fa";
 import Link from "next/link";
-import InfoSection from "../sections/InfoSection";
 
 const Footer = () => {
   return (
@@ -26,12 +25,12 @@ const Footer = () => {
             <h4>Linki</h4>
             <ul>
               <li>
-                <Link href="">
+                <Link href="polityka-prywatnosci">
                   <p>Polityka Prywatoności</p>
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="rodo">
                   <p>RODO</p>
                 </Link>
               </li>
@@ -63,7 +62,6 @@ const Footer = () => {
           </div>
         </div>
       </Container>
-      <InfoSection />
     </footer>
   );
 };

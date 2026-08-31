@@ -82,9 +82,31 @@ p {
   font-weight: normal;
 }
 
-button {
+.button {
   font-size: 24px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 28px;
+  background-color: var(--color-primary);
+  border: var(--border) solid 1px;
+  border-left: var(--border) solid 2px;
+  border-bottom: var(--border) solid 2px;
+  border-radius: 4px;
+}
+.button-surface {
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 28px;
+  background-color: var(--color-surface);
+  border: var(--border) solid 1px;
+  border-left: var(--border) solid 2px;
+  border-bottom: var(--border) solid 2px;
+  border-radius: 4px;
 }
 label {
   font-weight: 500;
@@ -97,6 +119,10 @@ textarea {
   border-radius: 4px;
 }
 @media (max-width: 768px) {
+  .specialText {
+    font-size: 60px;
+    font-family: var(--font-rubik-mono-one);
+  }
   h1 {
     font-size: 32px;
     font-weight: 600;

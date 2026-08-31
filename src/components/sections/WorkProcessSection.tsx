@@ -30,6 +30,7 @@ const WorkProcessSection = () => {
       background="surface"
       title="Relizacja"
       desc="Do każdego zlecenia podchodzę z planem, zależy mi na tym, aby  każda strona którą wykonuję, była spójna i łatwa w rozwoju oraz utrzymaniu."
+      id="realizacja"
     >
       <div>
         <div className="flex w-full justify-between">

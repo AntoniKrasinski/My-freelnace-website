@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "../common/Container";
-import Button from "../ui/Button";
 import Image from "next/image";
 import heroImage from "../../assets/images/heroImage.svg";
 import Slider from "../common/Slider";
@@ -26,9 +25,12 @@ const HeroSection = ({
               zadowoli i nada Twojej marce duszę.
             </p>
             <div className="flex gap-3">
-              <Button>Kontakt</Button>
-              <Link href="#uslugi">
-                <Button variant="secondary">Oferta</Button>
+              <Link href="#kontakt" className="button">
+                Kontakt
+              </Link>
+
+              <Link href="#uslugi" className="button-surface">
+                Oferta
               </Link>
             </div>
           </div>

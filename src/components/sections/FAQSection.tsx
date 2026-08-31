@@ -23,8 +23,9 @@ const questionsAnswers: { question: string; anwser: string }[] = [
   },
 
   {
-    question: "Jak po odebraniu strony będę mógł edytować treści?",
-    anwser: "123",
+    question: "Czy po odebraniu strony będę mógł edytować treści?",
+    anwser:
+      "Tak. Większość stron, które tworzę, wykonuję w WordPressie. Jest to system, który pozwala na łatwe edytowanie treści strony bez znajomości programowania. Po zakończeniu realizacji będziesz mógł samodzielnie aktualizować treści na stronie.",
   },
 
   {
@@ -35,8 +36,9 @@ const questionsAnswers: { question: string; anwser: string }[] = [
   },
 
   {
-    question: "Czy strona internetowa będzie zoptymalizowana pod kątem SEO?",
-    anwser: "123",
+    question: "Czy mogę później rozbudować stronę o nowe funkcje?",
+    anwser:
+      "Tak. Tworzę strony z myślą o ich potencjalnym dalszym rozwoju, dlatego w przyszłości można je rozbudować o nowe podstrony czy funkcje.",
   },
 ];
 
@@ -55,6 +57,7 @@ const WorkProcessSection = () => {
       background="surface"
       title="FAQ"
       desc="FAQ - Frequently Asked Questions, czyli najczęściej zadawane pytania."
+      id="faq"
     >
       <div className="flex w-full flex-row-reverse justify-between">
         <div className="xl:w-3/4">
