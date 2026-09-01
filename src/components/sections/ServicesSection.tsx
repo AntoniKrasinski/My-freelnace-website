@@ -25,7 +25,7 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, slug, image }: ServiceCardProps) => {
   return (
     <Link
-      href={`/usluga-${slug}`}
+      href={`/usluga/${slug}`}
       className="bg-primary theme-border-rounded flex h-48 max-w-lg justify-around p-4"
     >
       <div className="flex flex-col justify-between">

@@ -8,7 +8,7 @@ import { FaLinkedin as LinkedIn } from "react-icons/fa";
 import { FaGithub as GitHub } from "react-icons/fa";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ showLinks = false }: { showLinks?: boolean }) => {
   return (
     <footer>
       <Container>
@@ -62,6 +62,7 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+      {showLinks && <div></div>}
     </footer>
   );
 };

@@ -26,6 +26,7 @@ const ContactForm = () => {
 
   return (
     <div className="theme-border bg-surface p-6">
+      <h3>Otrzymaj Bezpłatną Wycenę</h3>
       <form
         action=""
         onSubmit={(e): void => {

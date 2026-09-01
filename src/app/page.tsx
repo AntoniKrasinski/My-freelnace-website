@@ -6,6 +6,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import AboutSection from "@/components/sections/AboutSection";
 import Slider from "@/components/common/Slider";
+import LocalSection from "@/components/sections/LocalSection";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <ServicesSection />
       <WorkProcessSection />
       <AboutSection />
-      <Slider>Projekty &#160;</Slider>
+      <Slider>PROJEKTY &#160;</Slider>
       <PlaceHolderSection />
       <FAQSection />
       <ContactSection />

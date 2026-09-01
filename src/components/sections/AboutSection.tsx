@@ -3,7 +3,10 @@ import Section from "@/components/common/Section";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
 import { title } from "process";
-const AboutSection = () => {
+import Square from "../ui/Square";
+import CityCases from "@/types/cityCases";
+
+const AboutSection = ({ city }: { city: CityCases }) => {
   return (
     <Section
       title="O Mnie"
@@ -13,11 +16,18 @@ const AboutSection = () => {
       <div className="flex flex-col-reverse gap-6 lg:flex-row">
         <div className="flex flex-col justify-center space-y-4 lg:w-1/2">
           <p>
-            <b>Cześć</b>, naywam się Antoni jestem studentem informatyki i
-            specjalizuje się w tworzeniu stron internetowych. Swoją pasję
+            <b>Cześć</b>, nazywam się Antoni jestem studentem informatyki i
+            specjalizuję się w tworzeniu stron internetowych. Swoją pasję
             rozwijam od ponad dwóch lat i jestem w to naprawdę zaangażowany. Na
-            przestrzeni tego okresu udało nauczyć mi się kluczowych technologi
-            oraz zasad designu.
+            przestrzeni tego okresu udało nauczyć mi się kluczowych technologii
+            oraz zasad designu.{" "}
+            {city && (
+              <>
+                {" "}
+                Swoje usługi realizuję w <b>{city.locative}</b> i na terenie
+                całej Polski.
+              </>
+            )}
           </p>
           <p>
             Podczas tworzenia projektów stawiam na kontakt z klientem, tak aby
