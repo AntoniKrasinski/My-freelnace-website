@@ -1,89 +1,115 @@
-import React from "react";
 import Image from "next/image";
 import Section from "../common/Container";
 import logo from "../../assets/images/logo.svg";
 import { MdMenu } from "react-icons/md";
 import { FaChevronDown as DropDown } from "react-icons/fa";
 import Link from "next/link";
+import services from "@/data/services";
 
-const NavBar = () => {
-  return (
-    <header className="fixed top-0 z-50 w-full">
-      <Section>
-        <div className="flex h-fit w-full flex-row items-center justify-between">
-          <div>
-            <Link href={"/"}>
-              <Image src={logo} alt="logo" height={70} />
-            </Link>
-          </div>
-          <div className="flex flex-row items-center lg:hidden">
-            <MdMenu size={60} />
-          </div>
-          <nav
-            aria-label="Główna nawigacja"
-            className="hidden flex-row items-center space-x-20 lg:flex"
-          >
-            <ul className="flex flex-row space-x-10">
-              <li>
-                <Link className="" href={""}>
-                  <span className="flex items-center justify-center gap-2">
-                    Usługi
-                    <DropDown size={18} />
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href={""}>O mnie</Link>
-              </li>
-              <li>
-                <Link href={""}>Blog</Link>
-              </li>
-              <li>
-                <Link href="#contact">Kontakt</Link>
-              </li>
-            </ul>
-            <Link href="#kontakt" className="button">
-              Wycena
-            </Link>
-          </nav>
-        </div>
-      </Section>
-    </header>
-  );
-};
+interface NavItem {
+  title: string;
+  slug: string;
+  dropDown?: navDropDown[];
+  cta?: boolean;
+}
+interface navDropDown {
+  title: string;
+  slug: string;
+}
 
-//ToDo
-const desktopNav = () => {
+const defaultNav: NavItem[] = [
+  {
+    title: "Usługi",
+    slug: "/#uslugi",
+    dropDown: Object.entries(services).map((serviceData) => ({
+      title: serviceData[1].title,
+      slug: `/usluga/${serviceData[0]}`,
+    })),
+  },
+  {
+    title: "O Mnie",
+    slug: "/#o-mnie",
+  },
+  {
+    title: "Kontakt",
+    slug: "/#kontakt",
+  },
+  {
+    title: "Wycena",
+    slug: "/#kontakt",
+    cta: true,
+  },
+];
+
+const NavDeskopt = () => {
   return (
     <nav
       aria-label="Główna nawigacja"
       className="hidden flex-row items-center space-x-20 lg:flex"
     >
       <ul className="flex flex-row space-x-10">
-        <li>
-          <Link href={""}>Usługi</Link>
-        </li>
-        <li>
-          <Link href={""}>O mnie</Link>
-        </li>
-        <li>
-          <Link href={""}>Blog</Link>
-        </li>
-        <li>
-          <Link href={"/contact"}>Kontakt</Link>
-        </li>
+        {defaultNav.map((navItem) => (
+          <li key={navItem.title} className="flex items-center justify-center">
+            {navItem.dropDown ? (
+              <div className="group relative">
+                <Link
+                  href={navItem.slug}
+                  className="flex items-center justify-center gap-2"
+                >
+                  {navItem.title}
+                  <DropDown />
+                </Link>
+                <NavDropDown navSubitems={navItem.dropDown} />
+              </div>
+            ) : (
+              <Link href={navItem.slug} className={navItem.cta ? `button` : ``}>
+                {navItem.title}
+              </Link>
+            )}
+          </li>
+        ))}
       </ul>
-      <Link href="kontakt" className="button">
-        Wycena
-      </Link>
     </nav>
   );
 };
-const mobileNav = () => {
+const NavDropDown = ({ navSubitems }: { navSubitems: navDropDown[] }) => {
+  return (
+    <div className="invisible absolute top-full left-1/2 group-hover:visible">
+      {navSubitems.map((navSubItem) => (
+        <Link
+          key={navSubItem.title}
+          href={navSubItem.slug}
+          className="theme-border bg-surface block w-full p-2 whitespace-nowrap"
+        >
+          {navSubItem.title}
+        </Link>
+      ))}
+    </div>
+  );
+};
+const NavMobile = () => {
   return (
     <div className="flex flex-row items-center lg:hidden">
       <MdMenu size={60} />
     </div>
+  );
+};
+
+const NavBar = () => {
+  return (
+    <header className="fixed top-0 z-50 w-full">
+      <Section>
+        <div className="flex h-fit w-full flex-row items-center justify-between">
+          <Link href={"/"}>
+            <Image src={logo} alt="logo" height={70} />
+          </Link>
+
+          <NavMobile />
+
+          <NavDeskopt />
+        </div>
+      </Section>
+    </header>
   );
 };
 

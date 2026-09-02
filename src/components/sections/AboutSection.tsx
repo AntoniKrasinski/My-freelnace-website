@@ -11,7 +11,7 @@ const AboutSection = ({ city }: { city?: CityCases }) => {
     <Section
       title="O Mnie"
       desc="Dowiedz się z kim możesz współpracować."
-      id="#o-mnie"
+      id="o-mnie"
     >
       <div className="flex flex-col-reverse gap-6 lg:flex-row">
         <div className="flex flex-col justify-center space-y-4 lg:w-1/2">
