@@ -47,7 +47,7 @@ interface Benefit {
   image: StaticImageData;
 }
 const benefits: Benefit[] = [
-  { title: "Wykupienie Nowej Domeny", image: domainImg },
+  { title: "Pomoc w Zakupie Domeny", image: domainImg },
   { title: "Wdrożenie Strony na Hosting", image: hostingImg },
   { title: "Optymalizacje Wydajności", image: performanceImg },
   { title: "Przygotowanie pod SEO", image: seoImg },

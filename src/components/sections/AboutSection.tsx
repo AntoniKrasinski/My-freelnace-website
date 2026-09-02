@@ -6,7 +6,7 @@ import { title } from "process";
 import Square from "../ui/Square";
 import CityCases from "@/types/cityCases";
 
-const AboutSection = ({ city }: { city: CityCases }) => {
+const AboutSection = ({ city }: { city?: CityCases }) => {
   return (
     <Section
       title="O Mnie"

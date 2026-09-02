@@ -5,7 +5,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 import { notFound } from "next/navigation";
 
-const page = async ({ params }: { params: Promise<{ city: string }> }) => {
+const page = async ({ params }: { params: Promise<{ service: string }> }) => {
   return (
     <>
       <ServiceSection />
