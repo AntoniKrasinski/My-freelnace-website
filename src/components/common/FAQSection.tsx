@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Section from "../common/Section";
-import VerticalSpecialText from "../common/VerticalSpecialText";
+import Section from "./Section";
+import VerticalSpecialText from "./VerticalSpecialText";
 import { FaChevronDown as DropDown } from "react-icons/fa";
-const questionsAnswers: { question: string; anwser: string }[] = [
+const defaultQuestions: { question: string; anwser: string }[] = [
   {
     question: "Jak długo trwa tworzenie strony internetowej?",
     anwser:
@@ -42,7 +42,11 @@ const questionsAnswers: { question: string; anwser: string }[] = [
   },
 ];
 
-const WorkProcessSection = () => {
+const WorkProcessSection = ({
+  questions = defaultQuestions,
+}: {
+  questions?: { question: string; anwser: string }[];
+}) => {
   const [dropAnwser, setDropAnwser] = useState<number | null>(0);
 
   const toogleQuestion = (index: number) => {
@@ -62,7 +66,7 @@ const WorkProcessSection = () => {
       <div className="flex w-full flex-row-reverse justify-between">
         <div className="xl:w-3/4">
           <div className="space-y-4">
-            {questionsAnswers.map((e, index) => (
+            {questions.map((e, index) => (
               <div key={index}>
                 <div
                   onClick={() => toogleQuestion(index)}

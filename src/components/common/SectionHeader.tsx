@@ -5,13 +5,26 @@ interface Prop {
   title: string;
   desc: string;
   h1: boolean;
+  noH: boolean;
 }
 
-const SectionHeader = ({ color, title, h1 = false, desc }: Prop) => {
+const SectionHeader = ({
+  color,
+  title,
+  h1 = false,
+  noH = false,
+  desc,
+}: Prop) => {
   return (
     <div className="flex w-full flex-col items-start space-x-8 py-4 md:flex-row md:items-center">
       <div className={`bg-${color} theme-border px-4`}>
-        {h1 ? <h1>{title}</h1> : <h2>{title}</h2>}
+        {noH ? (
+          <p className="h2">{title}</p>
+        ) : h1 ? (
+          <h1>{title}</h1>
+        ) : (
+          <h2>{title}</h2>
+        )}
       </div>
       <p className="pt-4 md:max-w-[65%] md:pt-0">{desc}</p>
     </div>

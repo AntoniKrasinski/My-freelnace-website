@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "../common/Container";
-import Section from "../common/Section";
+import Container from "./Container";
+import Section from "./Section";
 import ContactForm from "../ui/ContactForm";
 import { MdEmail as Email } from "react-icons/md";
 import { FaPhoneAlt as Phone } from "react-icons/fa";
@@ -12,7 +12,7 @@ const Contact = () => {
       desc="Jeśli jesteś zainteresowany moimi usługami skontaktuj się przez formularz, email lub zadzwoń telefonicznie."
       id="kontakt"
     >
-      <div className=" flex flex-col justify-between gap-4 lg:flex-row">
+      <div className="flex flex-col justify-between gap-4 lg:flex-row">
         <div>
           <ContactForm />
         </div>

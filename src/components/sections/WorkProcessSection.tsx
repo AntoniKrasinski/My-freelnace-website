@@ -1,7 +1,7 @@
 import React from "react";
 import Section from "../common/Section";
 import VerticalSpecialText from "../common/VerticalSpecialText";
-const workProcess: { title: string; desc: string }[] = [
+const defaultProcess: { title: string; desc: string }[] = [
   {
     title: "Ustalenie Potrzeb",
     desc: "Rozmowa z klientem, na tym etapie poznaje problem biznesowy, który moja usługa ma rozwiązać. Na podstawie informacji, które uzyskałem proponuje rozwiązanie. Na tym etapie również proszę klienta o preferencje wizualne strony. ",
@@ -24,7 +24,11 @@ const workProcess: { title: string; desc: string }[] = [
   },
 ];
 
-const WorkProcessSection = () => {
+const WorkProcessSection = ({
+  workProcess = defaultProcess,
+}: {
+  workProcess?: { title: string; desc: string }[];
+}) => {
   return (
     <Section
       background="surface"

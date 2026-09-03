@@ -1,12 +1,12 @@
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesSection from "@/components/sections/ServicesSection";
+import ServicesSection from "@/features/myServices/components/ServicesSection";
 import WorkProcessSection from "@/components/sections/WorkProcessSection";
-import PlaceHolderSection from "@/components/sections/ProjectsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import ContactSection from "@/components/sections/ContactSection";
+import PlaceHolderSection from "@/features/projects/components/ProjectsSection";
+import FAQSection from "@/components/common/FAQSection";
+import ContactSection from "@/components/common/ContactSection";
 import AboutSection from "@/components/sections/AboutSection";
 import Slider from "@/components/common/Slider";
-import LocalSection from "@/components/sections/LocalSection";
+import LocalSection from "@/features/cities/components/LocalSection";
 
 export default function Home() {
   return (

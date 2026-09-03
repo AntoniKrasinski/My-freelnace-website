@@ -1,10 +1,10 @@
 import React from "react";
-import Section from "../common/Section";
-import project1 from "../../assets/images/portfolio/portfolio.png";
+import Section from "../../../components/common/Section";
+import project1 from "../../../assets/images/portfolio/portfolio.png";
 import Image from "next/image";
-import Tags from "../ui/Tags";
+import Tags from "../../../components/ui/Tags";
 
-const PlaceHolderSection = () => {
+const ProjectsSection = () => {
   return (
     <Section
       title="Projekty"
@@ -50,4 +50,4 @@ const PlaceHolderSection = () => {
   );
 };
 
-export default PlaceHolderSection;
+export default ProjectsSection;

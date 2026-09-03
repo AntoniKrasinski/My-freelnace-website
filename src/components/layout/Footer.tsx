@@ -8,7 +8,7 @@ import { FaLinkedin as LinkedIn } from "react-icons/fa";
 import { FaGithub as GitHub } from "react-icons/fa";
 import Link from "next/link";
 
-const Footer = ({ showLinks = false }: { showLinks?: boolean }) => {
+const Footer = () => {
   return (
     <footer>
       <Container>
@@ -25,12 +25,12 @@ const Footer = ({ showLinks = false }: { showLinks?: boolean }) => {
             <h4>Linki</h4>
             <ul>
               <li>
-                <Link href="polityka-prywatnosci">
+                <Link href="/polityka-prywatnosci">
                   <p>Polityka Prywatoności</p>
                 </Link>
               </li>
               <li>
-                <Link href="rodo">
+                <Link href="/rodo">
                   <p>RODO</p>
                 </Link>
               </li>
@@ -53,16 +53,14 @@ const Footer = ({ showLinks = false }: { showLinks?: boolean }) => {
             <h4>Social</h4>
             <ul className="flex gap-2">
               <li>
-                <LinkedIn size={26} />
-              </li>
-              <li>
-                <GitHub size={26} />
+                <a href="https://www.linkedin.com/in/antoni-krasiński-415a69414/" target="_blank">
+                  <LinkedIn size={26} />
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </Container>
-      {showLinks && <div></div>}
     </footer>
   );
 };

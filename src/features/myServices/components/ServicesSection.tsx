@@ -1,13 +1,13 @@
-import Section from "../common/Section";
+import Section from "../../../components/common/Section";
 import Image from "next/image";
 import Link from "next/link";
-import IconCTA from "../../assets/icons/arrow-circle-up-right-fill-svgrepo-com.svg";
+import IconCTA from "../../../assets/icons/arrow-circle-up-right-fill-svgrepo-com.svg";
 import type { StaticImageData } from "next/image";
 import {
   landingPage,
   onlineShop,
   website,
-} from "../../assets/images/servicesImages/serviceImages";
+} from "../../../assets/images/servicesImages/serviceImages";
 import {
   performanceImg,
   cmsImg,
@@ -15,7 +15,7 @@ import {
   hostingImg,
   seoImg,
   supportImg,
-} from "../../assets/images/benefitsImages/benefitsImages";
+} from "../../../assets/images/benefitsImages/benefitsImages";
 
 interface ServiceCardProps {
   title: string;

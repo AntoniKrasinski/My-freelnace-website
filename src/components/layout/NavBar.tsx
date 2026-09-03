@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.svg";
 import { MdMenu } from "react-icons/md";
 import { FaChevronDown as DropDown } from "react-icons/fa";
 import Link from "next/link";
-import services from "@/data/services";
+import services from "@/features/myServices/data";
 
 interface NavItem {
   title: string;
@@ -22,7 +22,7 @@ const defaultNav: NavItem[] = [
     title: "Usługi",
     slug: "/#uslugi",
     dropDown: Object.entries(services).map((serviceData) => ({
-      title: serviceData[1].title,
+      title: serviceData[1].name,
       slug: `/usluga/${serviceData[0]}`,
     })),
   },

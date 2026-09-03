@@ -4,7 +4,7 @@ import Image from "next/image";
 import heroImage from "../../assets/images/heroImage.svg";
 import Slider from "../common/Slider";
 import Link from "next/link";
-import CityCases from "@/types/cityCases";
+import CityCases from "@/features/cities/cityCases";
 
 interface Prop {
   city?: CityCases;

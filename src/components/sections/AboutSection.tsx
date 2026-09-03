@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
 import { title } from "process";
 import Square from "../ui/Square";
-import CityCases from "@/types/cityCases";
+import CityCases from "@/features/cities/cityCases";
 
 const AboutSection = ({ city }: { city?: CityCases }) => {
   return (

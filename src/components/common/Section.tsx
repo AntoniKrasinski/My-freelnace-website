@@ -7,6 +7,7 @@ interface Prop {
   desc: string;
   id?: string;
   h1?: boolean;
+  noH?: boolean;
   background?: "background" | "surface";
 }
 const Section = ({
@@ -15,6 +16,7 @@ const Section = ({
   desc,
   id,
   h1 = false,
+  noH = false,
   background,
 }: Prop) => {
   return (
@@ -24,6 +26,7 @@ const Section = ({
         desc={desc}
         color={`${background === "surface" ? "background" : "surface"}`}
         h1={h1}
+        noH={noH}
       ></SectionHeader>
       {children}
     </Container>
