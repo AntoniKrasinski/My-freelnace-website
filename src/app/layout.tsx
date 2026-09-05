@@ -3,6 +3,7 @@ import { Roboto, Roboto_Mono, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <NavBar />
         <main className="flex-1 pt-[102px]">{children}</main>
         <Footer />
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );

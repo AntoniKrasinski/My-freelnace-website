@@ -2,6 +2,7 @@ import React from "react";
 import Section from "@/components/common/Section";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
+import antoni from "@/assets/images/AntoniKrasinski.png";
 import { title } from "process";
 import Square from "../ui/Square";
 import CityCases from "@/features/cities/cityCases";
@@ -15,12 +16,12 @@ const AboutSection = ({ city }: { city?: CityCases }) => {
     >
       <div className="flex flex-col-reverse gap-6 lg:flex-row">
         <div className="flex flex-col justify-center space-y-4 lg:w-1/2">
+          <h3>Cześć, nazywam się Antoni </h3>
           <p>
-            <b>Cześć</b>, nazywam się Antoni jestem studentem informatyki i
-            specjalizuję się w tworzeniu stron internetowych. Swoją pasję
-            rozwijam od ponad dwóch lat i jestem w to naprawdę zaangażowany. Na
-            przestrzeni tego okresu udało nauczyć mi się kluczowych technologii
-            oraz zasad designu.{" "}
+            jestem studentem informatyki i specjalizuję się w tworzeniu stron
+            internetowych. Swoją pasję rozwijam od ponad dwóch lat i jestem w to
+            naprawdę zaangażowany. Na przestrzeni tego okresu udało nauczyć mi
+            się kluczowych technologii oraz zasad designu.{" "}
             {city && (
               <>
                 {" "}
@@ -36,8 +37,9 @@ const AboutSection = ({ city }: { city?: CityCases }) => {
             i bezpośrednia współpraca.
           </p>
         </div>
-        <div className="flex lg:w-1/2 lg:justify-end">
-          <div>
+        <div className="flex items-end justify-center lg:w-1/2">
+          <Image src={antoni} alt="Antoni Krasiński" height={400}></Image>
+          {/*          <div>
             {[
               {
                 title: "Dbałość o Detale",
@@ -62,7 +64,7 @@ const AboutSection = ({ city }: { city?: CityCases }) => {
                 <p>{e.desc}</p>
               </div>
             ))}
-          </div>
+          </div>*/}
         </div>
       </div>
     </Section>

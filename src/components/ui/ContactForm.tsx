@@ -1,20 +1,23 @@
 "use client";
-import React from "react";
+import React, { FormEvent } from "react";
 import { useState } from "react";
-interface Data {
+import toast from "react-hot-toast";
+export interface ContactData {
   name: string;
   phone?: string;
   email: string;
   message: string;
 }
 
+const initialData: ContactData = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+};
+
 const ContactForm = () => {
-  const [data, setData] = useState<Data>({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
+  const [data, setData] = useState<ContactData>(initialData);
   const handleOnChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -24,17 +27,35 @@ const ContactForm = () => {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!result.success) {
+        toast.error("Błąd Podczas Wysyłania Wiadomości. Spróbuj Ponownie.");
+        return;
+      }
+      toast.success("Wiadomość Wysłana!");
+      setData(initialData);
+    } catch (error) {
+      toast.error("Błąd poczas łączenia z serwerem.");
+      console.error(error);
+    }
+  };
+
   return (
     <div className="theme-border bg-surface p-6">
       <h3>Otrzymaj Bezpłatną Wycenę</h3>
-      <form
-        action=""
-        onSubmit={(e): void => {
-          e.preventDefault();
-          console.log(data);
-        }}
-        className="flex flex-col"
-      >
+      <form action="" onSubmit={handleSubmit} className="flex flex-col">
         <label htmlFor="name">Imię i Nazwisko*</label>
         <input
           type="text"

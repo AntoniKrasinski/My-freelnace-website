@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Section from "../common/Container";
 import logo from "../../assets/images/logo.svg";
@@ -5,6 +6,7 @@ import { MdMenu } from "react-icons/md";
 import { FaChevronDown as DropDown } from "react-icons/fa";
 import Link from "next/link";
 import services from "@/features/myServices/data";
+import { usePathname } from "next/navigation";
 
 interface NavItem {
   title: string;
@@ -32,11 +34,11 @@ const defaultNav: NavItem[] = [
   },
   {
     title: "Kontakt",
-    slug: "/#kontakt",
+    slug: "#kontakt",
   },
   {
     title: "Wycena",
-    slug: "/#kontakt",
+    slug: "#kontakt",
     cta: true,
   },
 ];
@@ -73,13 +75,15 @@ const NavDeskopt = () => {
   );
 };
 const NavDropDown = ({ navSubitems }: { navSubitems: navDropDown[] }) => {
+  const path = usePathname();
+
   return (
     <div className="invisible absolute top-full left-1/2 group-hover:visible">
       {navSubitems.map((navSubItem) => (
         <Link
           key={navSubItem.title}
           href={navSubItem.slug}
-          className="theme-border bg-surface block w-full p-2 whitespace-nowrap"
+          className={`theme-border block w-full p-2 whitespace-nowrap ${path.includes(navSubItem.slug) ? "bg-primary" : "bg-surface"}`}
         >
           {navSubItem.title}
         </Link>
