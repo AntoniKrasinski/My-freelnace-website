@@ -7,6 +7,9 @@ import { FaChevronDown as DropDown } from "react-icons/fa";
 import Link from "next/link";
 import services from "@/features/myServices/data";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { div } from "motion/react-client";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavItem {
   title: string;
@@ -91,15 +94,81 @@ const NavDropDown = ({ navSubitems }: { navSubitems: navDropDown[] }) => {
     </div>
   );
 };
-const NavMobile = () => {
+
+const NavMobile = ({
+  isVisivle,
+  closeMenu,
+}: {
+  isVisivle: boolean;
+  closeMenu: () => void;
+}) => {
+  const path = usePathname();
+  const [dropDown, setDropDown] = useState(false);
+
   return (
-    <div className="flex flex-row items-center lg:hidden">
-      <MdMenu size={60} />
-    </div>
+    <AnimatePresence initial={false}>
+      {isVisivle ? (
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="bg-background fixed left-0 z-10 h-screen w-full overflow-hidden lg:hidden"
+          id="navMenu"
+        >
+          <nav
+            aria-label="Nawigacja mobilna"
+            className="flex items-center justify-center"
+          >
+            <ul className="flex h-screen w-[200px] flex-col gap-2 pt-30">
+              {defaultNav.map((navItem) => (
+                <li key={navItem.title} className="">
+                  {navItem.dropDown ? (
+                    <div className="group relative">
+                      <div
+                        onClick={() => {
+                          setDropDown(!dropDown);
+                        }}
+                        className="flex items-center gap-2 text-xl"
+                      >
+                        {navItem.title}
+                        <DropDown />
+                      </div>
+                      {dropDown &&
+                        navItem.dropDown.map((navSubItem) => (
+                          <Link
+                            onClick={closeMenu}
+                            key={navSubItem.title}
+                            href={navSubItem.slug}
+                            className={`theme-border block whitespace-nowrap ${path.includes(navSubItem.slug) ? "bg-primary" : "bg-surface"}`}
+                          >
+                            {navSubItem.title}
+                          </Link>
+                        ))}
+                    </div>
+                  ) : (
+                    <Link
+                      onClick={closeMenu}
+                      href={navItem.slug}
+                      className={`text-xl ${navItem.cta ? `button` : ``}`}
+                    >
+                      {navItem.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 };
 
 const NavBar = () => {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const path = usePathname();
+
   return (
     <header className="fixed top-0 z-50 w-full">
       <Section>
@@ -108,10 +177,23 @@ const NavBar = () => {
             <Image src={logo} alt="logo" height={70} />
           </Link>
 
-          <NavMobile />
+          <div className="flex flex-row items-center lg:hidden">
+            <MdMenu
+              size={60}
+              onClick={() => {
+                setShowMobileNav(!showMobileNav);
+              }}
+            />
+          </div>
 
           <NavDeskopt />
         </div>
+        <NavMobile
+          isVisivle={showMobileNav}
+          closeMenu={() => {
+            setShowMobileNav(false);
+          }}
+        />
       </Section>
     </header>
   );

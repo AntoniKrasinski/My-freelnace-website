@@ -95,7 +95,7 @@ const services: Record<string, serviceProps> = {
   "strona-internetowa": {
     name: "Strona Internetowa",
 
-    heroTitle: "Profesjonalna strona internetowa dla Twojej firmy",
+    heroTitle: "Profesjonalna strona internetowa",
 
     heroDesc:
       "Tworzę nowoczesne strony internetowe dla firm i lokalnych usługodawców. Strona jest szybka, estetyczna, responsywna i przygotowana pod pozycjonowanie w Google oraz dalszy rozwój biznesu.",

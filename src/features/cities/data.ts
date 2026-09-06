@@ -1,4 +1,4 @@
-import type LocationProps from "@/features/cities/type";
+import type {LocationProps} from "@/features/cities/type";
 import piotrkow from "../../assets/images/cities/piotrkowTrybunalski.png";
 import lodz from "../../assets/images/cities/lodz.png";
 

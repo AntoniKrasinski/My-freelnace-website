@@ -15,14 +15,20 @@ const SericeDetail = ({
 }) => {
   return (
     <Section noH title={service} desc="Dowiedz się więcej o mojej usłudze.">
-      <div className="flex">
-        <div className="flex lg:w-1/2">
-          <Image src={defaultImage} alt="" height={350} />
+      <div className="flex flex-col lg:flex-row">
+        <div className="flex justify-center lg:w-1/2">
+          <Image
+            src={defaultImage}
+            alt=""
+            height={350}
+            width={550}
+            className="h-auto w-full max-w-[550px]"
+          />
         </div>
         <div className="lg:w-1/2">
           <h2>{title}</h2>
           <p>{desc}</p>
-          <div className=" w-fit pt-4">
+          <div className="w-fit pt-4">
             <Link href="#kontakt" className="button">
               Darmowa Wycena
             </Link>

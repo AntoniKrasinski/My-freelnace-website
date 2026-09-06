@@ -1,10 +1,10 @@
 import React from "react";
-import Container from "../common/Container";
+import Container from "./common/Container";
 import Image from "next/image";
-import heroImage from "../../assets/images/heroImage.svg";
-import Slider from "../common/Slider";
+import heroImage from "@/assets/images/heroImage.svg";
+import Slider from "./common/Slider";
 import Link from "next/link";
-import CityCases from "@/features/cities/cityCases";
+import { CityCases } from "@/features/cities/type";
 
 interface Prop {
   city?: CityCases;

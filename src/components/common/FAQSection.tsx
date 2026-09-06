@@ -3,6 +3,7 @@ import { useState } from "react";
 import Section from "./Section";
 import VerticalSpecialText from "./VerticalSpecialText";
 import { FaChevronDown as DropDown } from "react-icons/fa";
+import { motion, AnimatePresence } from "motion/react";
 const defaultQuestions: { question: string; anwser: string }[] = [
   {
     question: "Jak długo trwa tworzenie strony internetowej?",
@@ -79,13 +80,23 @@ const WorkProcessSection = ({
                     </span>
                   </div>
                 </div>
-                <div
-                  className={`${dropAnwser === index ? "block" : "hidden"} bg-background theme-border`}
-                >
-                  {" "}
-                  {/*add framer motion animation*/}
-                  <p className="mx-6">{e.anwser}</p>
-                </div>
+                <AnimatePresence initial={false}>
+                  {dropAnwser === index && (
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        ease: "easeInOut",
+                      }}
+                      className={`bg-background theme-border overflow-hidden`}
+                    >
+                      {" "}
+                      <p className="mx-6">{e.anwser}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>

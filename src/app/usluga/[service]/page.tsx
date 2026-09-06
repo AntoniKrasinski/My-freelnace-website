@@ -10,7 +10,7 @@ import services from "@/features/myServices/data";
 import ProjectsSection from "@/features/projects/components/ProjectsSection";
 
 import defaultImage from "@/assets/images/heroImage.svg";
-import WorkProcessSection from "@/components/sections/WorkProcessSection";
+import WorkProcessSection from "@/components/WorkProcessSection";
 
 import { notFound } from "next/navigation";
 

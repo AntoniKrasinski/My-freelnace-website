@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "../common/Section";
-import VerticalSpecialText from "../common/VerticalSpecialText";
+import Section from "./common/Section";
+import VerticalSpecialText from "./common/VerticalSpecialText";
 const defaultProcess: { title: string; desc: string }[] = [
   {
     title: "Ustalenie Potrzeb",
