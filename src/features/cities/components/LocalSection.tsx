@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../../../components/common/Section";
 import Image from "next/image";
 import piotrkowTrybunalski from "../../assets/images/cities/piotrkowTrybunalski.png";
-import LocationProps from "@/features/cities/type";
+import { LocationProps } from "@/features/cities/type";
 
 const LocalSection = ({ cityData }: { cityData: LocationProps }) => {
   return (
