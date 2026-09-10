@@ -62,8 +62,10 @@ const NavDeskopt = () => {
                   className="flex items-center justify-center gap-2"
                 >
                   {navItem.title}
+
                   <DropDown />
                 </Link>
+
                 <NavDropDown navSubitems={navItem.dropDown} />
               </div>
             ) : (

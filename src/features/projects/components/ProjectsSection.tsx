@@ -13,26 +13,15 @@ const ProjectsSection = () => {
     >
       <article className="flex flex-col-reverse gap-14 xl:flex-row">
         <div className="space-y-4 xl:w-1/2">
-          <h3>Strona Internetowa dla Firmy XYZ</h3>
+          <h3>Projekty w realizacji...</h3>
 
           <p className="">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Repellendus non sint a corporis doloribus alias voluptas delectus
-            unde optio, nulla dolore perspiciatis, atque dolores cupiditate ab
-            culpa voluptatem hic magni! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Iste deserunt inventore suscipit tenetur sint cum
-            facilis quo assumenda ut porro quasi eaque, sunt explicabo sapiente
-            ad ullam beatae delectus dolorem. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Hic praesentium dolore architecto
-            consequatur non sit facilis tenetur dolores, et facere ut, quia
-            similique quasi vel alias deleniti ex qui harum?
+            W trakcie...
           </p>
           <Tags
             tags={[
-              "Własny Design",
-              "CMS",
-              "Projekt Logo",
-              "Formularz Kontaktowy",
+              "...",
+              "...",
             ]}
           />
         </div>
